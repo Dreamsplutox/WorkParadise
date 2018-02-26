@@ -6,7 +6,7 @@
 		private $userName;
 		private $pwd;
 
-		public __construct($hostNameE, $dbNameE, $charsetE, $userNameE, $pwdE){
+		public function __construct($hostNameE, $dbNameE, $charsetE, $userNameE, $pwdE){
 			if(is_string($hostNameE))
 				this->hostName = $hostNameE;
 			if(is_string($dbNameE))
