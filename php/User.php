@@ -1,36 +1,42 @@
 <?php
 	class User{
-		private $firstname;
-		private $lastname;
-		private $email;
-		private $pwd
+		private $_firstname;
+		private $_lastname;
+		private $_email;
+		private $_pwd
+		private $_id;
 
 		public function __construct(array $data){
 			hydrate($data);
 		}
 
 		public function __destruct(){
-			$this->firstname;
-			$this->lastname;
-			$this->email;
-			$this->pwd;
+			$this->_firstname;
+			$this->_lastname;
+			$this->_email;
+			$this->_pwd;
+			$this->_id;
 		}
 
 		// Getter
 		public function getFirstname(){
-			return $this->firstname;
+			return $this->_firstname;
 		}
 
 		public function getLastname(){
-			return $this->lastname;
+			return $this->_lastname;
 		}
 
 		public function getEmail(){
-			return $this->email;
+			return $this->_email;
 		}
 
 		public function getPwd(){
-			return $this->pwd;
+			return $this->_pwd;
+		}
+
+		public function getId(){
+			return $this->id;
 		}
 
 		public function __get($name){
@@ -38,20 +44,24 @@
 		}
 
 		// Setter
-		public function setFirstname($_firstname){
-			$this->firstname = $_firstname;
+		public function setFirstname($firstname){
+			$this->_firstname = $firstname;
 		}
 
-		public function setLastname($_lastname){
-			$this->lastname = $_lastname;
+		public function setLastname($lastname){
+			$this->_lastname = $lastname;
 		}
 
-		public function setEmail($_email){
-			$this->email = $_email;
+		public function setEmail($email){
+			$this->_email = $email;
 		}
 
-		public function setPwd($_pwd){
-			$this->pwd = $_pwd;
+		public function setPwd($pwd){
+			$this->_pwd = $pwd;
+		}
+
+		public function setId($id){
+			$this->_id = $id;
 		}
 
 		public function __set($name, $value){
@@ -67,6 +77,10 @@
 			if(method_exists($this, $method)){
 				$this->$method($value);
 			}
+		}
+
+		public function __toString(){
+			return "Le prénom est : ".$this->_firstname." le nom est : ".$this->_lastname." l'email est : ".$this->_email." le mot de passe est : ".$this->_pwd." et l'id : ".$this->_id;
 		}
 
 	}
