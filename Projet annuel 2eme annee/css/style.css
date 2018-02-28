@@ -21,17 +21,11 @@ text-align: center;
 	color: white;
 }
 
-
-
 .button_header{
 	width: 180px;
 	height: 90px;
 	background: #333333;
 	margin-top: 50px;
-}
-
-.button_header:hover{
-	background: green;
 }
 
 .social{
@@ -45,10 +39,3 @@ text-align: center;
 	margin-bottom: 20px;
 
 }
-
-
-
-
-
-
-	
