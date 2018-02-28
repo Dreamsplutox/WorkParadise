@@ -33,6 +33,10 @@
 			return $this->pwd;
 		}
 
+		public function __get($name){
+			echo 'Impossible d\'accèder à : '.$name.' sois il n\'existe pas, sois il est innacessible !';
+		}
+
 		// Setter
 		public function setFirstname($_firstname){
 			$this->firstname = $_firstname;
@@ -48,6 +52,11 @@
 
 		public function setPwd($_pwd){
 			$this->pwd = $_pwd;
+		}
+
+		public function __set($name, $value){
+			echo 'Erreur vous avez tentez d\'entrer une donnée dans une proprièté qui n\'existe pas ! ';
+			echo 'L\'attribut invalide est : '.$name.' et la valeur est : '.$value;			
 		}
 
 		public function hydrate(array $data{
