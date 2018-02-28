@@ -5,7 +5,6 @@
 		<title>Inscription</title>
 		<link href="../assets/css/bootstrap.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="../css/inscription.css">
-		<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 	</head>
 
 	<header class="page-header">
@@ -14,7 +13,7 @@
 	
 	<body>
 		<section class="row">
-			<form class="form-horizontal col-md-8" method="post" action="../php/inscription.php">
+			<form class="form-horizontal col-md-8" id="form_">
 
 				<div class="row">
 					<div class="form-group">
@@ -66,6 +65,18 @@
 				</div>
 
 			</form>
+
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+			<script>
+			    var xhr = new XMLHttpRequest();	
+			    xhr.open('POST', '../php/inscription.php');
+			    var theForm = document.getElementById('form_'),
+
+		        form = new FormData(theForm);
+
+			    xhr.send(form);
+			</script>
 		</section>
 	</body>
 	<footer class="page-footer">
